@@ -7,7 +7,7 @@ Clone the repo using `git clone XXX` and open the program files from your Java I
 ### Useful Git Commands
 - `git status` - shows the status of staged files
 - `git branch` - shows which branch you're in currently (likely Master)
-- `git checkout -b dev` - create new branch called 'dev'
-- `git switch dev` - switch from current branch to 'dev' branch
+- `git checkout -b dev` - creates new branch called 'dev'
+- `git switch dev` - switches from current branch to 'dev' branch
 - `git add --all` - adds recently modified files from your local directory to your cloned directory
 - `git commit --all -m "meaningful message goes here"` - commits your added changes to github repo (either forked or source depending on your case) with a message
