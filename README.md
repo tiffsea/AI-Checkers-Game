@@ -1,8 +1,8 @@
 # AI-Checkers-Game
-Implementation of a Checkers board game with 2 opponents - a human and an AI. The AI is implemented using an adversarial search algorithm called Minimax with Alpha-Beta Pruning technique .
+This is an agile implementation of a Checkers board game with 2 opponents - a human and an AI. The AI is implemented using an adversarial search algorithm called Minimax with Alpha-Beta Pruning technique.
 
 ### Installation
-Clone the repo using `git clone XXX` and open the program files from your Java IDE of choice. **Note** if you want to make changes to the code, you should fork this repo and proceed by working locally from your cloned-forked repo. Then edit any files from your IDE, save locally to your cloned repo, and commit changes back to your forked repo. Feel free to send me a pull request - I will review your changes and see it makes sense adding to source repo.
+Clone the repo using `git clone XXX` and open the program files from your Java IDE of choice. **Note** if you want to make changes to the code, you should fork this repo and proceed by working locally from your cloned-forked repo. Then edit any files from your IDE, save locally to your cloned repo, and commit changes back to your forked repo. Feel free to send me a pull request - I will review your changes and see if it makes sense adding to source repo.
 
 ### Useful Git Commands
 - `git status` - shows the status of staged files
