@@ -8,8 +8,9 @@ import java.util.Scanner;
 
 public class Checkers {
 	
-	/* declare first player (human) as "white" */
-	private static String player = "white";
+	/* global static variables */
+	private static String player = "white"; //declare first player (human) as "white"
+	private static boolean moveIsPossible; //used to determine if move is legal
 
 	public static void main(String[] args) {
 		
@@ -42,10 +43,15 @@ public class Checkers {
 		boolean gameIsRunning = true;
 		while (gameIsRunning) {
 			/* print grid */
-			for (int i = 0; i < 8; i++) {
+			for (int row = 0; row < 8; row++) {
 				System.out.println();
-				for (int j = 0; j < 8; j++) {
-					System.out.print(board[i][j]);
+				System.out.print(row);
+				for (int col = 0; col < 8; col++) {
+					if (row == 0 && col == 0) {
+						System.out.print("12345678");
+						System.out.println();
+					}
+					System.out.print(board[row][col]);
 				}
 			}
 					
@@ -73,15 +79,11 @@ public class Checkers {
 			}
 					
 			/* ensure move is possible */
-			boolean moveIsPossible;
-			if (board[moveFrom[0]][moveFrom[1]] == EMPTY) {
-				System.out.println("\ncannot move from empty space");
-			}
 			for (int row = 0; row < 8; row++) { //iterate through the board
 				for (int col = 0; col < 8; col++) {
 					if (player == "white") { //if black player
 						if (moveTo[0] == row && moveTo[1] == col) { //if moveTo == the current iteration on board
-							if (board[row][col] == EMPTY) { //is the space empty?
+							if (board[row][col] != EMPTY) { //is the space empty?
 								if (row < moveFrom[0]) { //is moveTo space forward?
 									System.out.println("\nmove is possible: ");
 									moveIsPossible = true;
@@ -94,7 +96,7 @@ public class Checkers {
 								}
 							}
 							else { //if not empty, then break
-								System.out.println("\nboard[rw][cl] is NOT empty: " + board[row][col]);
+								System.out.println("\ncannot move from empty space");
 								break;
 							}
 						}						
@@ -123,13 +125,14 @@ public class Checkers {
 			}
 					
 			/* do human moves on board */
-			board[moveFrom[0]][moveFrom[1]] = EMPTY;//mark space at moveFrom as empty
-			if (player == "white") {	
-				board[moveTo[0]][moveTo[1]] = WHITE; //mark space at moveTo as white token
+			if (moveIsPossible) {
+				board[moveFrom[0]][moveFrom[1]] = EMPTY;//mark space at moveFrom as empty
+				if (player == "white") {	
+					board[moveTo[0]][moveTo[1]] = WHITE; //mark space at moveTo as white token
+				}
+				else
+					board[moveTo[0]][moveTo[1]] = BLACK; //mark space at moveTo as white token
 			}
-			else
-				board[moveTo[0]][moveTo[1]] = BLACK; //mark space at moveTo as white token
-			
 			/* ask if game is over */
 			System.out.println("\nis game over? type char 'y' or 'n'");
 			char s = scanner.next().charAt(0);
@@ -142,3 +145,12 @@ public class Checkers {
 		}
 	}
 }
+
+
+
+
+
+
+//for(int i: moves){
+//System.out.print(i);
+//}
